@@ -1,32 +1,54 @@
 package com.example.susananaranjovillamil.orale;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 /**
  * Created by susana.naranjo.villamil on 6/18/17.
  */
 
-public class AddDate extends AppCompatActivity implements View.OnClickListener{
+public class AddDate extends AppCompatActivity implements View.OnClickListener, DatePickerDialog.OnDateSetListener{
 
-
+    ArrayList<Pictogram> pictograms = null;
+    ArrayList<Pictogram> symptoms =null;
+    ListView list;
+    AdapterDate adapter;
     Button saveButton;
+    int in_index=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_dates);
 
+        //Example du liste
+        pictograms= PictogramsRepository.getInstance().getPictograms();
+        symptoms=new ArrayList<Pictogram>();
+
+        while(in_index < 5) {
+                symptoms.add(pictograms.get(+in_index));
+            in_index++;
+        }
 
 
         saveButton= (Button) findViewById(R.id.saveButton);
         saveButton.setOnClickListener(this);
 
+        list=(ListView)findViewById(R.id.list);
+        adapter=new AdapterDate(this, symptoms);
+        list.setAdapter((ArrayAdapter) adapter);
+
         //TO BE CONTINUED
-            //uses AdapterDate
+
 
 
     }
@@ -72,4 +94,8 @@ public class AddDate extends AppCompatActivity implements View.OnClickListener{
         }
     }
 
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+
+    }
 }

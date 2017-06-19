@@ -17,15 +17,12 @@ public class CustomListAdapter extends ArrayAdapter<Pictogram> {
 
     private final Activity context;
     private final ArrayList<Pictogram> pictograms;
-    //private final String[] name;
-    //private final Integer[] imgid;
+
 
     public CustomListAdapter(Activity context, ArrayList<Pictogram> pictograms) {
         super(context, R.layout.mylist, pictograms);
         this.context=context;
         this.pictograms=pictograms;
-        //this.name=name;
-        //this.imgid=imgid;
     }
 
     @Override
