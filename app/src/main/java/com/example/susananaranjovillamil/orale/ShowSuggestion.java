@@ -25,6 +25,7 @@ public class ShowSuggestion extends AppCompatActivity implements View.OnClickLis
     ArrayList<Pictogram> pictograms = null;
     ArrayList<Pictogram> symptoms =null;
     ArrayList<Pictogram> symptomsSuggested =null;
+    ArrayList<Illness> illnesses=null;
     Button saveButton;
     CustomListAdapter adapter=null;
 
@@ -38,12 +39,21 @@ public class ShowSuggestion extends AppCompatActivity implements View.OnClickLis
         saveButton= (Button) findViewById(R.id.saveButton);
         saveButton.setOnClickListener(this);
         pictograms= PictogramsRepository.getInstance().getPictograms();
+        illnesses=IllnessesRepository.getInstance().getIllnesses();
 
 
         Intent in =getIntent();
         symptoms=in.getParcelableArrayListExtra("symptoms");
+
         symptomsSuggested=new ArrayList<Pictogram>();
         addSugestions();
+
+        if (symptomsSuggested.size()==0){
+            Intent intent = new Intent(this, AddDate.class);
+            intent.putParcelableArrayListExtra("symptoms", symptoms);
+            startActivityForResult(intent,1);
+
+        }
 
 
         list=(GridView)findViewById(R.id.list);
@@ -102,9 +112,60 @@ public class ShowSuggestion extends AppCompatActivity implements View.OnClickLis
     public void addSugestions() {
 
         int in_index=0;
-        while(in_index < 5) {
-            symptomsSuggested.add(pictograms.get(+in_index));
+        int in_index2=0;
+        int in_index3=0;
+        int in_index4=0;
+        int s=0;
+        int s2=0;
+
+        while(in_index < illnesses.size()) {
+
+
+            while (in_index2<illnesses.get(+in_index).getSymptoms().size()){
+
+                while (in_index3<symptoms.size()){
+
+                    if(symptoms.get(+in_index3).getName().equals(illnesses.get(+in_index).getSymptoms().get(+in_index2))){
+                        s++;
+                    }
+                    in_index3++;
+                }
+
+                in_index2++;
+                in_index3=0;
+            }
+
+
+            if(s>1){
+                in_index2=0;
+                in_index3=0;
+                while (in_index2<illnesses.get(+in_index).getSymptoms().size()){
+                    while((!pictograms.get(+in_index3).getName().equals(illnesses.get(+in_index).getSymptoms().get(+in_index2)))){
+
+                        in_index3++;
+                    }
+
+                    while(in_index4<symptoms.size()){
+                        if(illnesses.get(+in_index).getSymptoms().get(+in_index2).equals(symptoms.get(+in_index4).getName())){
+                          s2++;
+                        }
+                        in_index4++;
+                    }
+                    if (s2==0){
+                        symptomsSuggested.add(pictograms.get(in_index3));
+                    }
+                    s2=0;
+                    in_index2++;
+                    in_index3=0;
+                    in_index4=0;
+                }
+
+
+            }
+            s=0;
+
             in_index++;
+            in_index2=0;
         }
 
     }

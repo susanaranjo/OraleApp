@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     in_index++;
                 }
 
-                symptoms.add(pictograms.get(in_index));
+                symptoms.add(pictograms.get(+in_index));
                 adapter2.notifyDataSetChanged();
 
 
