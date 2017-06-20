@@ -20,10 +20,12 @@
         <activity android:name=".ShowBodySubpart"></activity>
         <activity android:name=".ShowSymptom"></activity>
         <activity android:name=".ShowSuggestion"></activity>
+        <activity android:name=".ShowCauses"></activity>
         <activity android:name=".AddDate"></activity>
         <activity android:name=".ShowConfirmation"></activity>
         <activity android:name=".ShowCR"></activity>
         <activity android:name=".MainActivity"></activity>
+
     </application>
 
 

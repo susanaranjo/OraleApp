@@ -30,19 +30,9 @@ public class AddDate extends AppCompatActivity implements View.OnClickListener, 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_dates);
 
-        //Example du liste
-        pictograms= PictogramsRepository.getInstance().getPictograms();
-        symptoms=new ArrayList<Pictogram>();
 
-        while(in_index < 5) {
-                symptoms.add(pictograms.get(+in_index));
-            in_index++;
-        }
-
-
-        //Liste
-        //Intent in =getIntent();
-        //symptoms=in.getParcelableArrayListExtra("symptoms");
+        Intent in =getIntent();
+        symptoms=in.getParcelableArrayListExtra("symptoms");
 
         saveButton= (Button) findViewById(R.id.saveButton);
         saveButton.setOnClickListener(this);
@@ -52,6 +42,7 @@ public class AddDate extends AppCompatActivity implements View.OnClickListener, 
         list.setAdapter((ArrayAdapter) adapter);
 
         //TO BE CONTINUED
+            //edit date
 
 
 

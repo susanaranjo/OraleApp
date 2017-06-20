@@ -49,7 +49,7 @@ public class ShowSuggestion extends AppCompatActivity implements View.OnClickLis
         addSugestions();
 
         if (symptomsSuggested.size()==0){
-            Intent intent = new Intent(this, AddDate.class);
+            Intent intent = new Intent(this, ShowCauses.class);
             intent.putParcelableArrayListExtra("symptoms", symptoms);
             startActivityForResult(intent,1);
 
@@ -83,6 +83,18 @@ public class ShowSuggestion extends AppCompatActivity implements View.OnClickLis
         });
 
 
+        listSelected.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+
+                // TO BE CONTINUED
+                //Delete selected symptom
+
+            }
+        });
+
 
     }
 
@@ -95,7 +107,7 @@ public class ShowSuggestion extends AppCompatActivity implements View.OnClickLis
 
             case R.id.saveButton:
 
-                Intent intent = new Intent(this, AddDate.class);
+                Intent intent = new Intent(this, ShowCauses.class);
                 intent.putParcelableArrayListExtra("symptoms", symptoms);
                 startActivityForResult(intent,1);
 
