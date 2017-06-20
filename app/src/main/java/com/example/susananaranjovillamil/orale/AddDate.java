@@ -40,6 +40,10 @@ public class AddDate extends AppCompatActivity implements View.OnClickListener, 
         }
 
 
+        //Liste
+        //Intent in =getIntent();
+        //symptoms=in.getParcelableArrayListExtra("symptoms");
+
         saveButton= (Button) findViewById(R.id.saveButton);
         saveButton.setOnClickListener(this);
 
@@ -64,7 +68,7 @@ public class AddDate extends AppCompatActivity implements View.OnClickListener, 
             case R.id.saveButton:
 
                 Intent intent = new Intent(this, ShowConfirmation.class);
-                //TO BE CONTINUED
+                intent.putParcelableArrayListExtra("symptoms", symptoms);
                 startActivityForResult(intent,1);
 
                 break;
@@ -82,10 +86,9 @@ public class AddDate extends AppCompatActivity implements View.OnClickListener, 
         if (requestCode == 1) {
             if (resultCode == RESULT_OK) {
 
+                ArrayList<Pictogram> finalSymptoms=data.getParcelableArrayListExtra("finalSymptoms");
                 Intent intent = new Intent();
-
-                //TO BE CONTINUED
-
+                intent.putParcelableArrayListExtra("finalSymptoms", finalSymptoms);
                 setResult(RESULT_OK, intent);
                 finish();
 

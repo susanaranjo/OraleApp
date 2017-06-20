@@ -19,7 +19,7 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
 
 
     Button addButton;
-
+    ArrayList<Pictogram> finalSymptoms = null;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +46,9 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
                 Intent intent = new Intent(this, MainActivity.class);
 
                 // TO BE CONTINUED
+                    //add a class to keep data
 
-                startActivity(intent);
+                startActivityForResult(intent,1);
 
                 break;
 
@@ -57,6 +58,24 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
                 break;
         }
     }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode==1){
+            if(resultCode == RESULT_OK){
+
+                finalSymptoms=data.getParcelableArrayListExtra("finalSymptoms");
+
+                // TO BE CONTINUED
+
+            }
+
+        }
+
+
+    }
+
 }
 
 

@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.saveButton:
 
                 Intent intent = new Intent(this, ShowSuggestion.class);
-                // TO BE CONTINUED
+                intent.putParcelableArrayListExtra("symptoms", symptoms);
                 startActivityForResult(intent,2);
 
                 break;
@@ -145,10 +145,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (requestCode==2){
             if(resultCode == RESULT_OK){
 
+                ArrayList<Pictogram> finalSymptoms=data.getParcelableArrayListExtra("finalSymptoms");
                 Intent intent = new Intent();
-
-                //TO BE CONTINUED
-
+                intent.putParcelableArrayListExtra("finalSymptoms", finalSymptoms);
                 setResult(RESULT_OK, intent);
                 finish();
 

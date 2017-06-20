@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+
 /**
  * Created by susana.naranjo.villamil on 6/18/17.
  */
@@ -15,12 +17,14 @@ public class ShowConfirmation extends AppCompatActivity implements View.OnClickL
 
     Button showCRButton;
     Button homeButton;
+    ArrayList<Pictogram> symptoms =null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show_confirmation);
         Intent in =getIntent();
+        symptoms=in.getParcelableArrayListExtra("symptoms");
 
 
 
@@ -45,9 +49,7 @@ public class ShowConfirmation extends AppCompatActivity implements View.OnClickL
             case R.id.showCRButton:
 
                 Intent intent = new Intent(this, ShowCR.class);
-
-                //TO BE CONTINUED
-
+                intent.putParcelableArrayListExtra("symptoms", symptoms);
                 startActivity(intent);
 
                 break;
@@ -56,9 +58,7 @@ public class ShowConfirmation extends AppCompatActivity implements View.OnClickL
             case R.id.homeButton:
 
                 Intent intent2 = new Intent();
-
-                //TO BE CONTINUED
-
+                intent2.putParcelableArrayListExtra("finalSymptoms", symptoms);
                 setResult(RESULT_OK, intent2);
                 finish();
 
