@@ -13,7 +13,7 @@ import java.util.UUID;
 public class Pictogram implements Parcelable{
 
 
-    private String  name, bodyPart, bodySubpart;
+    private String  name, bodyPart, bodySubpart, description;
     private Integer imgid;
     private int day, month, year;
 
@@ -21,7 +21,7 @@ public class Pictogram implements Parcelable{
 
 
 
-    public Pictogram (String bodyPart, String bodySubpart, String name, Integer imgid, int day, int month, int year){
+    public Pictogram (String bodyPart, String bodySubpart, String name, Integer imgid, int day, int month, int year, String description){
 
         this.bodyPart=bodyPart;
         this.bodySubpart=bodySubpart;
@@ -30,6 +30,7 @@ public class Pictogram implements Parcelable{
         this.day=day;
         this.month=month;
         this.year=year;
+        this.description=description;
 
     }
 
@@ -88,6 +89,14 @@ public class Pictogram implements Parcelable{
 
     public void setYear(int year) {
         this.year = year;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Pictogram (Parcel in){

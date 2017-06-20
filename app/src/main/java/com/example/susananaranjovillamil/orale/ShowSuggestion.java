@@ -20,9 +20,11 @@ import java.util.ArrayList;
 public class ShowSuggestion extends AppCompatActivity implements View.OnClickListener{
 
     GridView list;
+    GridView listSelected;
+    AdapterSelected adapter2=null;
     ArrayList<Pictogram> pictograms = null;
     ArrayList<Pictogram> symptoms =null;
-    ArrayList<Pictogram> selectedSymptoms =null;
+    ArrayList<Pictogram> symptomsSuggested =null;
     Button saveButton;
     CustomListAdapter adapter=null;
 
@@ -37,14 +39,20 @@ public class ShowSuggestion extends AppCompatActivity implements View.OnClickLis
         saveButton.setOnClickListener(this);
         pictograms= PictogramsRepository.getInstance().getPictograms();
 
+
         Intent in =getIntent();
         symptoms=in.getParcelableArrayListExtra("symptoms");
+        symptomsSuggested=new ArrayList<Pictogram>();
         addSugestions();
 
 
         list=(GridView)findViewById(R.id.list);
-        adapter=new CustomListAdapter(this, selectedSymptoms);
+        adapter=new CustomListAdapter(this, symptomsSuggested);
         list.setAdapter((ArrayAdapter) adapter);
+
+        listSelected=(GridView)findViewById(R.id.list_selected);
+        adapter2=new AdapterSelected(this, symptoms);
+        listSelected.setAdapter((ArrayAdapter) adapter2);
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -53,13 +61,13 @@ public class ShowSuggestion extends AppCompatActivity implements View.OnClickLis
                                     int position, long id) {
 
                 int in_index = 0;
-                while((!pictograms.get(+in_index).getName().equals(selectedSymptoms.get(+position).getName()))){
+                while((!pictograms.get(+in_index).getName().equals(symptomsSuggested.get(+position).getName()))){
 
                     in_index++;
                 }
 
                 symptoms.add(pictograms.get(in_index));
-
+                adapter2.notifyDataSetChanged();
 
             }
         });
@@ -93,6 +101,11 @@ public class ShowSuggestion extends AppCompatActivity implements View.OnClickLis
 
     public void addSugestions() {
 
+        int in_index=0;
+        while(in_index < 5) {
+            symptomsSuggested.add(pictograms.get(+in_index));
+            in_index++;
+        }
 
     }
 
