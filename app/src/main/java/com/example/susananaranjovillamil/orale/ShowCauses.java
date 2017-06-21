@@ -45,12 +45,12 @@ public class ShowCauses extends AppCompatActivity implements View.OnClickListene
         causes=new ArrayList<Pictogram>();
         addCauses();
 
-        /*if (causes.size()==0){
+        if (causes.size()==0){
             Intent intent = new Intent(this, AddDate.class);
             intent.putParcelableArrayListExtra("symptoms", symptoms);
             startActivityForResult(intent,1);
 
-        }*/
+        }
 
 
         list=(GridView)findViewById(R.id.list);
