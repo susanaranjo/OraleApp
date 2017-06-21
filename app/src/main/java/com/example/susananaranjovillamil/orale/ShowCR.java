@@ -26,6 +26,7 @@ public class ShowCR extends AppCompatActivity implements View.OnClickListener{
 
         homeButton= (Button) findViewById(R.id.homeButton);
         homeButton.setOnClickListener(this);
+
         //TO BE CONTINUED
 
 

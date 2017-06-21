@@ -5,4 +5,6 @@ package com.example.susananaranjovillamil.orale;
  */
 
 public class AdapterCR {
+
+    //TO BE CONTINUED
 }
