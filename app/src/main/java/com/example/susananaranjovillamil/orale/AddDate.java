@@ -5,18 +5,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 /**
  * Created by susana.naranjo.villamil on 6/18/17.
  */
 
-public class AddDate extends AppCompatActivity implements View.OnClickListener, DatePickerDialog.OnDateSetListener{
+public class AddDate extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, View.OnClickListener{
 
     ArrayList<Pictogram> pictograms = null;
     ArrayList<Pictogram> symptoms =null;
@@ -24,6 +26,9 @@ public class AddDate extends AppCompatActivity implements View.OnClickListener, 
     AdapterDate adapter;
     Button saveButton;
     int in_index=0;
+    int day, month, year;
+    int dayFinal, monthFinal, yearFinal;
+    int listPosition=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +46,25 @@ public class AddDate extends AppCompatActivity implements View.OnClickListener, 
         adapter=new AdapterDate(this, symptoms);
         list.setAdapter((ArrayAdapter) adapter);
 
-        //TO BE CONTINUED
-            //edit date
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+
+                Calendar c = Calendar.getInstance();
+                year = c.get(Calendar.YEAR);
+                month = c.get(Calendar.MONTH) + 1;
+                day= c.get(Calendar.DAY_OF_MONTH);
+                listPosition=position;
+                DatePickerDialog datePickerDialog = new DatePickerDialog(AddDate.this, AddDate.this, year, month, day);
+                datePickerDialog.show();
 
 
+
+            }
+        });
 
     }
 
@@ -89,7 +109,14 @@ public class AddDate extends AppCompatActivity implements View.OnClickListener, 
     }
 
     @Override
-    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+    public void onDateSet(DatePicker view, int year, int month, int day) {
+        yearFinal= year;
+        monthFinal=month;
+        dayFinal=day;
+        symptoms.get(+listPosition).setDay(dayFinal);
+        symptoms.get(+listPosition).setMonth(monthFinal);
+        symptoms.get(+listPosition).setYear(yearFinal);
+        adapter.notifyDataSetChanged();
 
     }
 }

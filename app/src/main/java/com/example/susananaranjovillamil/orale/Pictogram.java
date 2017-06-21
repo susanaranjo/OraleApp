@@ -21,7 +21,7 @@ public class Pictogram implements Parcelable{
 
 
 
-    public Pictogram (String bodyPart, String bodySubpart, String name, Integer imgid, int day, int month, int year, String description, String cause){
+    public Pictogram (String bodyPart, String bodySubpart, String name, Integer imgid, int year, int month, int day, String description, String cause){
 
         this.bodyPart=bodyPart;
         this.bodySubpart=bodySubpart;

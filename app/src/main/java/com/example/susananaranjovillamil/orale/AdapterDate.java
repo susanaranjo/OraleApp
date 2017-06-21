@@ -35,12 +35,10 @@ public class AdapterDate extends ArrayAdapter<Pictogram> {
 
         ImageView imageView = (ImageView) rowView.findViewById(R.id.picto);
         TextView txtDate = (TextView) rowView.findViewById(R.id.date);
-        //TO BE CONTINUED
 
 
         imageView.setImageResource(pictograms.get(position).getImgid());
         txtDate.setText(pictograms.get(position).getDay()+"/"+ pictograms.get(position).getMonth()+"/" +pictograms.get(position).getYear());
-        //TO BE CONTINUED
 
         return rowView;
 

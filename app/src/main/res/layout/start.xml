@@ -16,6 +16,7 @@ tools:context="com.example.susananaranjovillamil.orale.MainActivity">
         android:layout_alignParentTop="true"
         android:layout_marginLeft="0pt"
         android:layout_marginRight="0pt"
+        android:paddingLeft="10dp"
         android:layout_weight="0.22"
         android:background="@color/colorPrimary"
         android:orientation="horizontal"
@@ -70,7 +71,8 @@ tools:context="com.example.susananaranjovillamil.orale.MainActivity">
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:background="@android:color/background_light"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        >
 
 
         <Space

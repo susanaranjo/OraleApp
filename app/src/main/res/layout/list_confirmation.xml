@@ -9,14 +9,14 @@
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="casual"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/picto"
+        android:layout_marginStart="53dp"
+        android:fontFamily="sans-serif"
         android:gravity="center_vertical"
         android:text="Date"
         android:textAlignment="center"
-        android:textSize="14sp"
-        android:layout_below="@+id/picto"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="53dp" />
+        android:textSize="12sp" />
 
     <ImageView
         android:id="@+id/picto"
