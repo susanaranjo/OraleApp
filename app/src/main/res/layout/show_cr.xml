@@ -50,13 +50,9 @@
 
         <Button
             android:id="@+id/homeButton"
-            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="@drawable/house2"
-            android:backgroundTint="@color/colorPrimaryDark"
-            android:backgroundTintMode="src_over"
-            android:elevation="0dp" />
+            android:background="@drawable/house2" />
 
     </LinearLayout>
 

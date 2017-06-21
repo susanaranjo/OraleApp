@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -24,7 +25,7 @@ public class ShowConfirmation extends AppCompatActivity implements View.OnClickL
     Button editButton;
     ArrayList<Pictogram> symptoms =null;
     AdapterConfirmation adapter=null;
-    ListView list;
+    GridView list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,9 +52,9 @@ public class ShowConfirmation extends AppCompatActivity implements View.OnClickL
         TextView textDate = (TextView) findViewById(R.id.textDate);
         textDate.setText(day +"/"+ month + "/" + year);
 
-        /*list=(ListView)findViewById(R.id.list);
+        list=(GridView)findViewById(R.id.list);
         adapter=new AdapterConfirmation(this, symptoms);
-        list.setAdapter((ArrayAdapter) adapter);*/
+        list.setAdapter((ArrayAdapter) adapter);
 
     }
 

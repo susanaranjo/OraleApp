@@ -33,7 +33,13 @@ public class AdapterConfirmation extends ArrayAdapter<Pictogram> {
         LayoutInflater inflater=context.getLayoutInflater();
         View rowView=inflater.inflate(R.layout.list_confirmation, null,true);
 
-        //TO BE CONTINUED
+        ImageView imageView = (ImageView) rowView.findViewById(R.id.picto);
+        TextView txtDate = (TextView) rowView.findViewById(R.id.date);
+
+
+        imageView.setImageResource(pictograms.get(position).getImgid());
+        txtDate.setText(pictograms.get(position).getDay()+"/"+ pictograms.get(position).getMonth()+"/" +pictograms.get(position).getYear());
+
 
         return rowView;
 

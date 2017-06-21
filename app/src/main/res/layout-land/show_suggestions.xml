@@ -49,13 +49,9 @@
 
         <Button
             android:id="@+id/saveButton"
-            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="@android:drawable/ic_menu_save"
-            android:backgroundTint="@color/colorPrimaryDark"
-            android:backgroundTintMode="src_over"
-            android:elevation="0dp" />
+            android:background="@drawable/check" />
     </LinearLayout>
 
 
