@@ -82,8 +82,7 @@ public class ShowConfirmation extends AppCompatActivity implements View.OnClickL
 
             case R.id.editButton:
 
-                //TO BE CONTINUED
-
+                finish();
                 break;
 
 

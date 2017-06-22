@@ -195,6 +195,9 @@ public class ShowSuggestion extends AppCompatActivity implements View.OnClickLis
                 setResult(RESULT_OK, intent);
                 finish();
 
+            }else{
+
+                finish();
             }
 
         }

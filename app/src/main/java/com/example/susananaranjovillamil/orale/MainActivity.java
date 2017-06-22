@@ -127,18 +127,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onActivityResult(requestCode, resultCode, data);
 
         in_index=0;
+        int in_index2=0;
+        int s=0;
         if (requestCode==1){
             if(resultCode == RESULT_OK){
                 String symptomeSelected =data.getStringExtra("symptome");
 
-                while(!pictograms.get(+in_index).getName().equals(symptomeSelected)){
+                while(in_index2<symptoms.size()){
 
-                    in_index++;
+                    if(symptoms.get(+in_index2).getName().equals(symptomeSelected)){
+                        s++;
+                    }
+
+                    in_index2++;
                 }
 
-                symptoms.add(pictograms.get(+in_index));
-                adapter2.notifyDataSetChanged();
+                if(s==0) {
+                    while (!pictograms.get(+in_index).getName().equals(symptomeSelected)) {
 
+                        in_index++;
+                    }
+
+                    if(symptoms.size()<15) {
+                        symptoms.add(pictograms.get(+in_index));
+                        adapter2.notifyDataSetChanged();
+                    } else {
+
+
+
+                    }
+                }
 
             }
 

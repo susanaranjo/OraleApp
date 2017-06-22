@@ -103,6 +103,9 @@ public class AddDate extends AppCompatActivity implements DatePickerDialog.OnDat
                 setResult(RESULT_OK, intent);
                 finish();
 
+            }else{
+
+                finish();
             }
 
         }

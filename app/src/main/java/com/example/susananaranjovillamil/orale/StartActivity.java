@@ -64,10 +64,6 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
             case R.id.addButton:
 
                 Intent intent = new Intent(this, MainActivity.class);
-
-                // TO BE CONTINUED
-                    //add a class to keep data
-
                 startActivityForResult(intent,1);
 
                 break;

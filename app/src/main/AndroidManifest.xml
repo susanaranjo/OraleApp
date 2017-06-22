@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/Orale">
 
-        <activity android:name=".StartActivity">
+        <activity android:name=".Splashscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,6 +25,7 @@
         <activity android:name=".ShowConfirmation"></activity>
         <activity android:name=".ShowCR"></activity>
         <activity android:name=".MainActivity"></activity>
+        <activity android:name=".StartActivity"></activity>
 
     </application>
 

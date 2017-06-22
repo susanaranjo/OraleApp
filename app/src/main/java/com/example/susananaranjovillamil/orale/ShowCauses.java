@@ -155,6 +155,9 @@ public class ShowCauses extends AppCompatActivity implements View.OnClickListene
                 setResult(RESULT_OK, intent);
                 finish();
 
+            }else{
+
+                finish();
             }
 
         }
