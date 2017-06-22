@@ -1,15 +1,22 @@
 package com.example.susananaranjovillamil.orale;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.GridView;
+import android.widget.ListView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 /**
  * Created by susana.naranjo.villamil on 6/18/17.
@@ -20,17 +27,30 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
 
     Button addButton;
     ArrayList<Pictogram> finalSymptoms = null;
-
+    ArrayList<Report> reports = null;
+    Context context;
+    ListView list;
+    AdapterStart adapter;
+    SharedPreference sharedPreference;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start);
 
-
         addButton= (Button) findViewById(R.id.addButton);
         addButton.setOnClickListener(this);
 
-        //TO BE CONTINUED
+        sharedPreference = new SharedPreference();
+        reports=sharedPreference.loadFavorites(this);
+        if (reports==null){
+            reports=new ArrayList<Report>();
+        }
+
+
+        list=(ListView)findViewById(R.id.list);
+        adapter=new AdapterStart(this, reports);
+        list.setAdapter((ArrayAdapter) adapter);
+
 
     }
 
@@ -66,8 +86,14 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
             if(resultCode == RESULT_OK){
 
                 finalSymptoms=data.getParcelableArrayListExtra("finalSymptoms");
+                Calendar c = Calendar.getInstance();
+                int year = c.get(Calendar.YEAR);
+                int month = c.get(Calendar.MONTH) + 1;
+                int day= c.get(Calendar.DAY_OF_MONTH);
+                reports.add(new Report(day, month, year, finalSymptoms));
+                adapter.notifyDataSetChanged();
 
-                // TO BE CONTINUED
+                sharedPreference.addFavorite(this.getApplicationContext(), new Report(day, month, year, finalSymptoms));
 
             }
 
