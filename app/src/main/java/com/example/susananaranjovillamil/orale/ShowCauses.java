@@ -161,18 +161,39 @@ public class ShowCauses extends AppCompatActivity implements View.OnClickListene
 
         int in_index=0;
         int in_index2=0;
+        int in_index3=0;
+        int s=0;
 
         while(in_index < symptoms.size()) {
 
            if (!symptoms.get(+in_index).getCause().equals("")){
 
-                while((!pictograms.get(+in_index2).getName().equals(symptoms.get(+in_index).getCause()))){
+               while(in_index3<causes.size()){
 
-                    in_index2++;
-                }
+                   if(causes.get(+in_index3).getName().equals(symptoms.get(+in_index).getCause())){
+                       s++;
+                   }
 
-                causes.add(pictograms.get(+in_index2));
+                   in_index3++;
+               }
+
+               if(s==0) {
+
+                   while((!pictograms.get(+in_index2).getName().equals(symptoms.get(+in_index).getCause()))){
+
+                       in_index2++;
+                   }
+
+                   causes.add(pictograms.get(+in_index2));
+
+
+               }
+
+
             }
+            in_index2=0;
+            in_index3=0;
+            s=0;
             in_index++;
         }
 
