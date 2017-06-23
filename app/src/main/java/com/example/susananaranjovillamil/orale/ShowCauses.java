@@ -1,13 +1,16 @@
 package com.example.susananaranjovillamil.orale;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 
@@ -27,6 +30,7 @@ public class ShowCauses extends AppCompatActivity implements View.OnClickListene
     ArrayList<Pictogram> causes =null;
     Button saveButton;
     CustomListAdapter adapter=null;
+    final Context context = this;
 
 
     @Override
@@ -85,10 +89,42 @@ public class ShowCauses extends AppCompatActivity implements View.OnClickListene
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
+                                    final int position, long id) {
 
-                // TO BE CONTINUED
-                //Delete selected symptom
+                final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+                final View mView = getLayoutInflater().inflate(R.layout.delete_dialog,null);
+                ImageView picto = (ImageView) mView.findViewById(R.id.picto);
+                picto.setImageResource(symptoms.get(+position).getImgid());
+                Button cancel = (Button) mView.findViewById(R.id.button);
+                Button delete = (Button) mView.findViewById(R.id.button2);
+
+                alertDialogBuilder.setView(mView);
+                final AlertDialog dialog = alertDialogBuilder.create();
+                dialog.show();
+
+                delete.setOnClickListener(new View.OnClickListener(){
+
+                    @Override
+                    public void onClick(View view){
+
+                        symptoms.remove(symptoms.get(+position));
+                        adapter2.notifyDataSetChanged();
+                        dialog.dismiss();
+
+                    }
+
+                });
+
+                cancel.setOnClickListener(new View.OnClickListener(){
+
+                    @Override
+                    public void onClick(View view){
+
+                        dialog.dismiss();
+
+                    }
+
+                });
 
             }
         });
