@@ -2,11 +2,10 @@
 
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-tools:context="com.example.susananaranjovillamil.orale.MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -16,6 +15,7 @@ tools:context="com.example.susananaranjovillamil.orale.MainActivity">
         android:layout_alignParentTop="true"
         android:layout_marginLeft="0pt"
         android:layout_marginRight="0pt"
+        android:paddingLeft="10dp"
         android:layout_weight="0.22"
         android:background="@color/colorPrimary"
         android:orientation="horizontal"
@@ -45,24 +45,24 @@ tools:context="com.example.susananaranjovillamil.orale.MainActivity">
             android:textStyle="bold" />
     </LinearLayout>
 
-<LinearLayout
-    android:id="@+id/linearLayout1"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_centerHorizontal="true"
-    android:orientation="horizontal"
-    android:layout_below="@+id/linearLayout2"
-    android:layout_above="@+id/linearLayout">
-
-    <ListView
-        android:id="@+id/list_CR"
+    <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/background_light"
-        android:padding="5pt" />
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_above="@+id/linearLayout">
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/background_light"
+            android:padding="5pt" />
 
 
-</LinearLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -70,8 +70,15 @@ tools:context="com.example.susananaranjovillamil.orale.MainActivity">
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:background="@android:color/background_light"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        >
 
+
+        <Button
+            android:id="@+id/conversationButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/doctor" />
 
         <Space
             android:layout_width="wrap_content"
@@ -82,7 +89,8 @@ tools:context="com.example.susananaranjovillamil.orale.MainActivity">
             android:id="@+id/addButton"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@drawable/add" />
+            android:background="@drawable/add"
+            />
 
 
     </LinearLayout>

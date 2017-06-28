@@ -160,6 +160,14 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
                 break;
 
 
+            case R.id.conversationButton:
+
+                Intent intent2 = new Intent(this, MainActivity.class);
+                startActivityForResult(intent2,2);
+
+                break;
+
+
             default:
 
                 break;
@@ -185,6 +193,17 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
             }
 
         }
+
+
+        if (requestCode==2){
+            if(resultCode == RESULT_OK){
+
+                //TO BE CONTINUED
+
+            }
+
+        }
+
 
 
     }
