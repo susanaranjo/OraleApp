@@ -3,11 +3,16 @@ package com.example.susananaranjovillamil.orale;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ListView;
+import android.widget.TextView;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -21,9 +26,12 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
     Button addButton;
     ArrayList<Pictogram> finalSymptoms = null;
     ArrayList<Report> reports = null;
-    Context context;
+    ArrayList<Pictogram> symptoms =null;
+    final Context context=this;
     ListView list;
-    AdapterStart adapter;
+    GridView listSelected;
+    AdapterStart adapter = null;
+    AdapterReport adapter2=null;
     SharedPreference sharedPreference;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +47,100 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
             reports=new ArrayList<Report>();
         }
 
+        symptoms=new ArrayList<Pictogram>();
 
         list=(ListView)findViewById(R.id.list);
         adapter=new AdapterStart(this, reports);
         list.setAdapter((ArrayAdapter) adapter);
+
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    final int position, long id) {
+
+                symptoms =reports.get(+position).getSymptoms();
+
+
+                final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+                final View mView = getLayoutInflater().inflate(R.layout.report_dialog,null);
+                listSelected = (GridView) mView.findViewById(R.id.list_selected);
+                adapter2=new AdapterReport(StartActivity.this,symptoms);
+                listSelected.setAdapter((ArrayAdapter) adapter2);
+
+                Button delete = (Button) mView.findViewById(R.id.button);
+                Button report = (Button) mView.findViewById(R.id.button2);
+
+                alertDialogBuilder.setView(mView);
+                final AlertDialog dialog = alertDialogBuilder.create();
+                dialog.show();
+
+                report.setOnClickListener(new View.OnClickListener(){
+
+                    @Override
+                    public void onClick(View view){
+
+                        dialog.dismiss();
+                        Intent intent = new Intent(context, ShowCR.class);
+                        intent.putParcelableArrayListExtra("symptoms", symptoms);
+                        startActivity(intent);
+
+                    }
+
+                });
+
+                delete.setOnClickListener(new View.OnClickListener(){
+
+                    @Override
+                    public void onClick(View view){
+
+                        dialog.dismiss();
+
+                        final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+                        final View mView = getLayoutInflater().inflate(R.layout.delete_report_dialog,null);
+                        TextView date = (TextView) mView.findViewById(R.id.date);
+                        date.setText(reports.get(+position).getDay()+"/"+ reports.get(+position).getMonth()+"/" + reports.get(+position).getYear());
+                        Button cancel = (Button) mView.findViewById(R.id.button);
+                        Button delete = (Button) mView.findViewById(R.id.button2);
+
+                        alertDialogBuilder.setView(mView);
+                        final AlertDialog dialog = alertDialogBuilder.create();
+                        dialog.show();
+
+                        delete.setOnClickListener(new View.OnClickListener(){
+
+                            @Override
+                            public void onClick(View view){
+
+                                reports.remove(reports.get(+position));
+                                sharedPreference.storeFavorites(context,reports);
+                                adapter.notifyDataSetChanged();
+                                dialog.dismiss();
+
+                            }
+
+                        });
+
+                        cancel.setOnClickListener(new View.OnClickListener(){
+
+                            @Override
+                            public void onClick(View view){
+
+                                dialog.dismiss();
+
+                            }
+
+                        });
+
+
+                    }
+
+                });
+
+            }
+        });
 
 
 
@@ -82,7 +180,7 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
                 reports.add(new Report(day, month, year, finalSymptoms));
                 adapter.notifyDataSetChanged();
 
-                sharedPreference.addFavorite(this.getApplicationContext(), new Report(day, month, year, finalSymptoms));
+                sharedPreference.addFavorite(context, new Report(day, month, year, finalSymptoms));
 
             }
 

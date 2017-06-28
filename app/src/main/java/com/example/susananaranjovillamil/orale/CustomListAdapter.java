@@ -31,13 +31,8 @@ public class CustomListAdapter extends ArrayAdapter<Pictogram> {
         View rowView=inflater.inflate(R.layout.mylist, null,true);
 
 
-        //TextView txtTitle = (TextView) rowView.findViewById(R.id.item);
         ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
-        //TextView extratxt = (TextView) rowView.findViewById(R.id.textView1);
-
-        //txtTitle.setText(name[position]);
         imageView.setImageResource(pictograms.get(position).getImgid());
-        //extratxt.setText("Description "+itemname[position]);
 
         return rowView;
 

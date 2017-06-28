@@ -15,7 +15,6 @@ import java.util.ArrayList;
 public class AdapterSelected extends ArrayAdapter<Pictogram> {
 
 
-
     private final Activity context;
     private final ArrayList<Pictogram> pictograms;
 
@@ -37,5 +36,5 @@ public class AdapterSelected extends ArrayAdapter<Pictogram> {
 
         return rowView;
 
-    };
+    }
 }

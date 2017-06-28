@@ -48,20 +48,16 @@ public class SharedPreference {
             return (ArrayList<Report>) favorites;
         }
 
+
+
         public void addFavorite(Context context, Report report) {
-            List favorites = loadFavorites(context);
+            List <Report> favorites = loadFavorites(context);
             if (favorites == null)
                 favorites = new ArrayList<Report>();
             favorites.add(report);
             storeFavorites(context, favorites);
         }
-        public void removeFavorite(Context context, Report report) {
-            ArrayList<Report> favorites = loadFavorites(context);
-            if (favorites != null) {
-                favorites.remove(report);
-                storeFavorites(context, favorites);
-            }
-        }
+
 
 
 

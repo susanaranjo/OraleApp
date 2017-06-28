@@ -75,13 +75,27 @@ public class ShowSuggestion extends AppCompatActivity implements View.OnClickLis
                                     int position, long id) {
 
                 int in_index = 0;
-                while((!pictograms.get(+in_index).getName().equals(symptomsSuggested.get(+position).getName()))){
+                int in_index2 = 0;
+                int s=0;
 
-                    in_index++;
+                while(in_index2<symptoms.size()){
+
+                    if(symptoms.get(+in_index2).getName().equals(symptomsSuggested.get(+position).getName())){
+                        s++;
+                    }
+
+                    in_index2++;
                 }
 
-                symptoms.add(pictograms.get(in_index));
-                adapter2.notifyDataSetChanged();
+                if (s==0) {
+                    while ((!pictograms.get(+in_index).getName().equals(symptomsSuggested.get(+position).getName()))) {
+
+                        in_index++;
+                    }
+
+                    symptoms.add(pictograms.get(in_index));
+                    adapter2.notifyDataSetChanged();
+                }
 
             }
         });
