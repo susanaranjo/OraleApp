@@ -3,7 +3,6 @@ package com.example.susananaranjovillamil.orale;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -79,10 +78,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
                 final View mView = getLayoutInflater().inflate(R.layout.delete_dialog,null);
                 ImageView picto = (ImageView) mView.findViewById(R.id.picto);
-                ImageView arrow = (ImageView) mView.findViewById(R.id.arrow);
-                ImageView trash = (ImageView) mView.findViewById(R.id.trash);
                 picto.setImageResource(symptoms.get(+position).getImgid());
-                arrow.setImageResource(R.drawable.arrow);
                 Button cancel = (Button) mView.findViewById(R.id.button);
                 Button delete = (Button) mView.findViewById(R.id.button2);
 

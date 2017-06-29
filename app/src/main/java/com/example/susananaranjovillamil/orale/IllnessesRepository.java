@@ -31,6 +31,7 @@ public class IllnessesRepository {
         illnesses.add(new Illness("depression", Arrays.asList("p72", "p73", "p75", "p13")));
         illnesses.add(new Illness("hyperlipidemie", Arrays.asList("p45", "p36", "p9")));
         illnesses.add(new Illness("arthrose", Arrays.asList("p38", "p39", "p40")));
+        illnesses.add(new Illness("tourista", Arrays.asList("p45", "p48", "p49", "p50", "p73")));
 
         //To BE CONTINUED
 

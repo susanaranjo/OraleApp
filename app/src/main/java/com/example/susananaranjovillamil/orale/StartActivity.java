@@ -24,6 +24,7 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
 
 
     Button addButton;
+    Button conversationButton;
     ArrayList<Pictogram> finalSymptoms = null;
     ArrayList<Report> reports = null;
     ArrayList<Pictogram> symptoms =null;
@@ -40,6 +41,8 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
 
         addButton= (Button) findViewById(R.id.addButton);
         addButton.setOnClickListener(this);
+        conversationButton= (Button) findViewById(R.id.conversationButton);
+        conversationButton.setOnClickListener(this);
 
         sharedPreference = new SharedPreference();
         reports=sharedPreference.loadFavorites(this);
@@ -162,7 +165,7 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
 
             case R.id.conversationButton:
 
-                Intent intent2 = new Intent(this, MainActivity.class);
+                Intent intent2 = new Intent(this, Conversation.class);
                 startActivityForResult(intent2,2);
 
                 break;

@@ -9,7 +9,8 @@
         android:supportsRtl="true"
         android:theme="@style/Orale">
 
-        <activity android:name=".Splashscreen">
+        <activity android:name=".Splashscreen"
+            android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,6 +27,7 @@
         <activity android:name=".ShowCR"></activity>
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".StartActivity"></activity>
+        <activity android:name=".Conversation"></activity>
 
     </application>
 
