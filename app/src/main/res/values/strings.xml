@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Orale</string>
+    <string name="disclaim">Ce compte-rendu a été réalisé de manière à ce que le patient puisse présenter ses symptomes à un médecin dans une langue étrangère.
+    Ce n\'est absolument pas un diagnostic médical mais uniquement une aide au dialogue médical.</string>
 </resources>

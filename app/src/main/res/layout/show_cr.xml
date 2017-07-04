@@ -97,7 +97,7 @@
             android:fontFamily="casual"
             android:gravity="center_vertical"
             android:textAlignment="center"
-
+            android:text="@string/disclaim"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:textColor="@color/colorPrimary"
