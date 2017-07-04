@@ -105,11 +105,11 @@ public class PictogramsRepository {
         pictograms.add(new Pictogram("p65","","p65",R.drawable.p65, year,month,day,"contraceptives",""));
         pictograms.add(new Pictogram("p66","","p66",R.drawable.p66, year,month,day,"chaud",""));
         pictograms.add(new Pictogram("p67","","p67",R.drawable.p67, year,month,day,"voyage",""));
-        pictograms.add(new Pictogram("p68","","p68",R.drawable.p68, year,month,day," ",""));
+        pictograms.add(new Pictogram("p68","","p68",R.drawable.p68, year,month,day,"obésité",""));
         pictograms.add(new Pictogram("p69","","p69",R.drawable.p69, year,month,day,"soulèvement de charge",""));
-        pictograms.add(new Pictogram("p70","","p70",R.drawable.p70, year,month,day," ",""));
+        pictograms.add(new Pictogram("p70","","p70",R.drawable.p70, year,month,day,"nourriture exotique",""));
         pictograms.add(new Pictogram("p71","","p71",R.drawable.p71, year,month,day,"chûte",""));
-        pictograms.add(new Pictogram("p72","","p72",R.drawable.p72, year,month,day," ",""));
+        pictograms.add(new Pictogram("p72","","p72",R.drawable.p72, year,month,day,"antibiotiques",""));
 
     }
 
