@@ -2,7 +2,6 @@ package com.example.susananaranjovillamil.orale;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;

@@ -10,15 +10,15 @@
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="0pt"
         android:layout_marginRight="0pt"
-        android:paddingLeft="10dp"
         android:layout_weight="0.22"
-        android:background="@color/colorPrimary"
+        android:background="@android:color/background_light"
         android:orientation="horizontal"
+        android:paddingLeft="10dp"
         android:weightSum="1">
 
 
@@ -50,6 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
+        android:background="@color/colorBackground"
         android:orientation="vertical"
         android:layout_below="@+id/linearLayout2"
         android:layout_above="@+id/linearLayout">
@@ -58,7 +59,6 @@
             android:id="@+id/list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@android:color/background_light"
             android:padding="5pt" />
 
 
@@ -67,11 +67,14 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="52dp"
         android:layout_alignParentBottom="true"
         android:background="@android:color/background_light"
         android:orientation="horizontal"
-        >
+        android:paddingBottom="1dp"
+        android:paddingTop="1dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
 
 
         <Button
@@ -89,8 +92,7 @@
             android:id="@+id/addButton"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@drawable/add"
-            />
+            android:background="@drawable/add" />
 
 
     </LinearLayout>

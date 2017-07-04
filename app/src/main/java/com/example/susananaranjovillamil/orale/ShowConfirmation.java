@@ -7,9 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
-import android.widget.ListView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -50,7 +48,7 @@ public class ShowConfirmation extends AppCompatActivity implements View.OnClickL
         int month = c.get(Calendar.MONTH) + 1;
         int day= c.get(Calendar.DAY_OF_MONTH);
         TextView textDate = (TextView) findViewById(R.id.textDate);
-        textDate.setText(day +"/"+ month + "/" + year);
+        textDate.setText(day +" / "+ month + " / " + year);
 
         list=(GridView)findViewById(R.id.list);
         adapter=new AdapterConfirmation(this, symptoms);

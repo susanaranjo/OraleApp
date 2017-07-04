@@ -12,7 +12,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
-
 import java.util.ArrayList;
 
 
@@ -209,6 +208,7 @@ public class ShowSuggestion extends AppCompatActivity implements View.OnClickLis
                     }
 
                     while(in_index4<symptoms.size()){
+
                         if(illnesses.get(+in_index).getSymptoms().get(+in_index2).equals(symptoms.get(+in_index4).getName())){
                           s2++;
                         }

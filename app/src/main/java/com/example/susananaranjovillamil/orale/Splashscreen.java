@@ -4,7 +4,7 @@ package com.example.susananaranjovillamil.orale;
  * Created by susana.naranjo.villamil on 6/22/17.
  */
 
-import android.app.Activity;
+
 import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
@@ -14,6 +14,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class Splashscreen extends AppCompatActivity {
     public void onAttachedToWindow() {
@@ -21,7 +22,8 @@ public class Splashscreen extends AppCompatActivity {
         Window window = getWindow();
         window.setFormat(PixelFormat.RGBA_8888);
     }
-    /** Called when the activity is first created. */
+
+
     Thread splashTread;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,14 +45,20 @@ public class Splashscreen extends AppCompatActivity {
         iv.clearAnimation();
         iv.startAnimation(anim);
 
+        anim = AnimationUtils.loadAnimation(this, R.anim.translate);
+        anim.reset();
+        TextView website = (TextView) findViewById(R.id.website);
+        website.clearAnimation();
+        website.startAnimation(anim);
+
         splashTread = new Thread() {
             @Override
             public void run() {
                 try {
                     int waited = 0;
-                    // Splash screen pause time
+
                     while (waited < 5000) {
-                        sleep(100);
+                        sleep(150);
                         waited += 100;
                     }
                     Intent intent = new Intent(Splashscreen.this,
@@ -59,7 +67,7 @@ public class Splashscreen extends AppCompatActivity {
                     startActivity(intent);
                     Splashscreen.this.finish();
                 } catch (InterruptedException e) {
-                    // do nothing
+
                 } finally {
                     Splashscreen.this.finish();
                 }

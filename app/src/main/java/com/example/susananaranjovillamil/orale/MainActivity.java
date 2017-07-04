@@ -13,7 +13,6 @@ import android.widget.GridView;
 import android.widget.Button;
 import android.content.Intent;
 import android.widget.ImageView;
-
 import java.util.ArrayList;
 
 
@@ -187,10 +186,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     if(symptoms.size()<15) {
                         symptoms.add(pictograms.get(+in_index));
                         adapter2.notifyDataSetChanged();
-                    } else {
-
-                        //TO BE CONTINUED
-
                     }
                 }
 

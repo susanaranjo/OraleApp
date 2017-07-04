@@ -8,7 +8,8 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
+        android:background="@android:color/background_light"
         android:layout_marginLeft="0pt"
         android:layout_marginRight="0pt"
         android:layout_weight="0.22"
@@ -52,7 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/linearLayout"
-        android:background="@android:color/background_light"
+        android:background="@color/colorBackground"
         android:orientation="vertical"
         android:padding="5pt">
 

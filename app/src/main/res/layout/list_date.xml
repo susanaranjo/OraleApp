@@ -10,7 +10,7 @@ android:orientation="horizontal" >
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/background_light"
+        android:background="@color/colorBackground"
         android:orientation="vertical">
 
         <TextView
@@ -41,7 +41,7 @@ android:orientation="horizontal" >
             android:layout_alignParentTop="true"
             android:layout_marginStart="26dp"
             android:layout_toEndOf="@+id/date"
-            app:srcCompat="@drawable/edit" />
+            app:srcCompat="@drawable/edit2" />
 
     </RelativeLayout>
 </LinearLayout>

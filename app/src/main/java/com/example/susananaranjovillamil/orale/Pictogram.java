@@ -7,8 +7,6 @@ package com.example.susananaranjovillamil.orale;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.text.SimpleDateFormat;
-import java.util.UUID;
 
 public class Pictogram implements Parcelable{
 

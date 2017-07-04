@@ -6,12 +6,26 @@
     android:background="@android:color/background_light"
     android:orientation="vertical"
     android:layout_gravity="center"
-    android:gravity="center">
+    android:gravity="center"
+    android:weightSum="1">
 
     <ImageView
         android:id="@+id/splash"
         android:layout_width="160dp"
-        android:layout_height="138dp"
-        android:background="@drawable/logo" />
+        android:layout_height="160dp"
+        android:background="@drawable/logo2" />
+
+
+    <TextView
+        android:id="@+id/website"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_weight="0.35"
+        android:gravity="center_vertical"
+        android:text="http://first-2017-team-gilberto.fr/"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="12sp" />
 
 </LinearLayout>
