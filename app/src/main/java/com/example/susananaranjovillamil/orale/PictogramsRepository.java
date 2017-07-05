@@ -86,31 +86,31 @@ public class PictogramsRepository {
         pictograms.add(new Pictogram("p43","p431","p46",R.drawable.p46, year,month,day,"Douleurs en urinant",""));
         pictograms.add(new Pictogram("p43","p431","p47",R.drawable.p47, year,month,day,"Urines avec sang",""));
 
-        pictograms.add(new Pictogram("p48","p49","p51",R.drawable.p51, year,month,day,"jambes lourdes",""));
-        pictograms.add(new Pictogram("p48","p50","p52",R.drawable.p52, year,month,day,"fourmillements",""));
+        pictograms.add(new Pictogram("p48","p49","p51",R.drawable.p51, year,month,day,"Jambes lourdes",""));
+        pictograms.add(new Pictogram("p48","p50","p52",R.drawable.p52, year,month,day,"Fourmillements",""));
 
-        pictograms.add(new Pictogram("p53","p54","p55",R.drawable.p55, year,month,day,"mal à la main gauche",""));
-        pictograms.add(new Pictogram("p53","p54","p56",R.drawable.p56, year,month,day,"fourmillements",""));
+        pictograms.add(new Pictogram("p53","p54","p55",R.drawable.p55, year,month,day,"Mal à la main gauche",""));
+        pictograms.add(new Pictogram("p53","p54","p56",R.drawable.p56, year,month,day,"Fourmillements",""));
 
 
-        pictograms.add(new Pictogram("p57","p571","p58",R.drawable.p58, year,month,day,"fièvre","p66"));
+        pictograms.add(new Pictogram("p57","p571","p58",R.drawable.p58, year,month,day,"Fièvre","p66"));
         pictograms.add(new Pictogram("p57","p571","p59",R.drawable.p59, year,month,day,"Variation du poids corporel",""));
-        pictograms.add(new Pictogram("p57","p571","p60",R.drawable.p60, year,month,day,"asthénie-fatigue-malaise géneraliste",""));
-        pictograms.add(new Pictogram("p57","p571","p61",R.drawable.p61, year,month,day,"vertiges","p32"));
-        pictograms.add(new Pictogram("p57","p571","p62",R.drawable.p62, year,month,day,"insomnie",""));
-        pictograms.add(new Pictogram("p57","p571","p63",R.drawable.p63, year,month,day,"somnolence",""));
-        pictograms.add(new Pictogram("p57","p571","p64",R.drawable.p64, year,month,day,"frissons",""));
+        pictograms.add(new Pictogram("p57","p571","p60",R.drawable.p60, year,month,day,"Asthénie-fatigue-malaise géneraliste",""));
+        pictograms.add(new Pictogram("p57","p571","p61",R.drawable.p61, year,month,day,"Vertiges","p32"));
+        pictograms.add(new Pictogram("p57","p571","p62",R.drawable.p62, year,month,day,"Insomnie",""));
+        pictograms.add(new Pictogram("p57","p571","p63",R.drawable.p63, year,month,day,"Somnolence",""));
+        pictograms.add(new Pictogram("p57","p571","p64",R.drawable.p64, year,month,day,"Frissons",""));
 
 
         pictograms.add(new Pictogram("p0","p0","p0",R.drawable.p1, year,month,day,"Facteurs externes",""));
-        pictograms.add(new Pictogram("p65","p0","p65",R.drawable.p65, year,month,day,"contraceptif",""));
-        pictograms.add(new Pictogram("p66","p0","p66",R.drawable.p66, year,month,day,"forte chaleur/canicule",""));
-        pictograms.add(new Pictogram("p67","p0","p67",R.drawable.p67, year,month,day,"voyage",""));
-        pictograms.add(new Pictogram("p68","p0","p68",R.drawable.p68, year,month,day,"obésité",""));
-        pictograms.add(new Pictogram("p69","p0","p69",R.drawable.p69, year,month,day,"soulèvement de charge",""));
-        pictograms.add(new Pictogram("p70","p0","p70",R.drawable.p70, year,month,day,"nourriture exotique",""));
-        pictograms.add(new Pictogram("p71","p0","p71",R.drawable.p71, year,month,day,"chûte",""));
-        pictograms.add(new Pictogram("p72","p0","p72",R.drawable.p72, year,month,day,"antibiotiques",""));
+        pictograms.add(new Pictogram("p65","p0","p65",R.drawable.p65, year,month,day,"Contraceptif",""));
+        pictograms.add(new Pictogram("p66","p0","p66",R.drawable.p66, year,month,day,"Forte chaleur/canicule",""));
+        pictograms.add(new Pictogram("p67","p0","p67",R.drawable.p67, year,month,day,"Voyage",""));
+        pictograms.add(new Pictogram("p68","p0","p68",R.drawable.p68, year,month,day,"Obésité",""));
+        pictograms.add(new Pictogram("p69","p0","p69",R.drawable.p69, year,month,day,"Soulèvement de charge",""));
+        pictograms.add(new Pictogram("p70","p0","p70",R.drawable.p70, year,month,day,"Nourriture exotique",""));
+        pictograms.add(new Pictogram("p71","p0","p71",R.drawable.p71, year,month,day,"Chûte",""));
+        pictograms.add(new Pictogram("p72","p0","p72",R.drawable.p72, year,month,day,"Antibiotiques",""));
 
     }
 
