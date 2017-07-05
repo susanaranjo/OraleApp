@@ -21,6 +21,7 @@ public class ExpendableListAdapter extends BaseExpandableListAdapter {
     private Context context;
     private ArrayList<String> name_subpart;
     private HashMap<String, ArrayList<Pictogram>> theList;
+    ArrayList<Pictogram> pictogramsRepository = PictogramsRepository.getInstance().getPictograms();
 
     public ExpendableListAdapter(Context context, ArrayList<String> headers, HashMap<String, ArrayList<Pictogram>> listing){
         this.context = context;
@@ -45,7 +46,7 @@ public class ExpendableListAdapter extends BaseExpandableListAdapter {
 
 
         final Pictogram picto =  getChild(groupPosition, childPosition);
-        final String childText = (String) picto.getName();
+        final String childText = (String) picto.getDescription();
 
         if (convertView == null) {
             LayoutInflater infalInflater = (LayoutInflater) this.context
@@ -88,7 +89,18 @@ public class ExpendableListAdapter extends BaseExpandableListAdapter {
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded,
                              View convertView, ViewGroup parent) {
-        String headerTitle = (String) getGroup(groupPosition);
+        int in_index=0;
+
+        String headerTitleName = (String) getGroup(groupPosition);
+
+
+        while (!pictogramsRepository.get(+in_index).getName().equals(headerTitleName)) {
+
+            in_index++;
+        }
+
+
+        String headerTitle = (String) pictogramsRepository.get(+in_index).getDescription();
         if (convertView == null) {
             LayoutInflater infalInflater = (LayoutInflater) this.context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -98,7 +110,9 @@ public class ExpendableListAdapter extends BaseExpandableListAdapter {
         TextView lblListHeader = (TextView) convertView
                 .findViewById(R.id.lblListHeader);
         lblListHeader.setTypeface(null, Typeface.BOLD);
-        lblListHeader.setText("Sous-partie du corps : "+ headerTitle);
+
+
+            lblListHeader.setText(headerTitle);
 
         return convertView;
     }

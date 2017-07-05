@@ -22,6 +22,7 @@ public class ShowCR extends AppCompatActivity implements View.OnClickListener{
 
     Button homeButton;
     ArrayList<Pictogram> symptoms =null;
+    ArrayList<Pictogram> pictogramsRepository = null;
     ListView list;
     ArrayList<ArrayList<Pictogram>> symptoms_list = new ArrayList<>();
     ArrayList<String> listDataHeader;
@@ -35,6 +36,7 @@ public class ShowCR extends AppCompatActivity implements View.OnClickListener{
         setContentView(R.layout.show_cr);
         Intent in =getIntent();
         symptoms=in.getParcelableArrayListExtra("symptoms");
+        pictogramsRepository= PictogramsRepository.getInstance().getPictograms();
 
         homeButton= (Button) findViewById(R.id.homeButton);
         homeButton.setOnClickListener(this);
@@ -73,16 +75,16 @@ public class ShowCR extends AppCompatActivity implements View.OnClickListener{
 
 
     public ArrayList<String>  get_body_subparts (ArrayList<Pictogram> pictograms){
-        ArrayList<String> body_subparts = new ArrayList();
-        String sub_part;
+        ArrayList<String> body_subparts_names = new ArrayList();
+        String sub_part_name;
         for(int i = 0; i < pictograms.size(); i++) {
-            sub_part = pictograms.get(i).getBodySubpart();
-            List provisoire = Arrays.asList(body_subparts);
-            if (!body_subparts.contains(sub_part)) {
-                body_subparts.add(sub_part);
+            sub_part_name = pictograms.get(i).getBodySubpart();
+            List provisoire = Arrays.asList(body_subparts_names);
+            if (!body_subparts_names.contains(sub_part_name)) {
+                body_subparts_names.add(sub_part_name);
             }
         }
-        return body_subparts;
+        return body_subparts_names;
 
     }
 

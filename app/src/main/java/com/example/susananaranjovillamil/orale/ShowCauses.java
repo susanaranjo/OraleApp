@@ -185,7 +185,6 @@ public class ShowCauses extends AppCompatActivity implements View.OnClickListene
 
                    causes.add(pictograms.get(+in_index2));
 
-
                }
 
 
