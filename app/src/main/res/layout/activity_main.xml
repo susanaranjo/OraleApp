@@ -198,6 +198,7 @@
             android:layout_centerHorizontal="true"
             android:numColumns="2"
             android:padding="5pt"
+
             android:stretchMode="columnWidth"
             android:paddingRight="400dp"
             tools:ignore="ObsoleteLayoutParam,RtlHardcoded"></GridView>
