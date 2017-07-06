@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 /**
  * Created by susana.naranjo.villamil on 6/20/17.
@@ -36,6 +37,8 @@ public class AdapterConfirmation extends ArrayAdapter<Pictogram> {
         ImageView imageView = (ImageView) rowView.findViewById(R.id.picto);
         TextView txtDate = (TextView) rowView.findViewById(R.id.date);
 
+        Calendar c = Calendar.getInstance();
+        int day= c.get(Calendar.DAY_OF_MONTH);
 
         imageView.setImageResource(pictograms.get(position).getImgid());
         txtDate.setText(pictograms.get(position).getDay()+"/"+ pictograms.get(position).getMonth()+"/" +pictograms.get(position).getYear());

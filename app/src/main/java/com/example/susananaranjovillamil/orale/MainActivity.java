@@ -29,6 +29,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ArrayList<Pictogram> symptoms =null;
     int in_index = 0;
 
+    Button button2;
+    Button button3;
+    Button button4;
+    Button button5;
+    Button button6;
+    Button button7;
+    Button button8;
+    Button button9;
+    Button button10;
+    Button button11;
+    Button button12;
+    Button button13;
+    Button button14;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +59,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         symptoms=new ArrayList<Pictogram>();
         addbodyParts();
 
+        Button button1 = (Button) findViewById(R.id.button_1);
+        Button button2 = (Button) findViewById(R.id.button_2);
+        Button button3 = (Button) findViewById(R.id.button_3);
+        Button button4 = (Button) findViewById(R.id.button_4);
+        Button button5 = (Button) findViewById(R.id.button_5);
+        Button button6 = (Button) findViewById(R.id.button_6);
+        Button button7 = (Button) findViewById(R.id.button_7);
+        Button button8 = (Button) findViewById(R.id.button_8);
+        Button button9 = (Button) findViewById(R.id.button_9);
+        Button button10 = (Button) findViewById(R.id.button_10);
+        Button button11= (Button) findViewById(R.id.button_11);
+        Button button12 = (Button) findViewById(R.id.button_12);
+        Button button13 = (Button) findViewById(R.id.button_13);
+        Button button14 = (Button) findViewById(R.id.button_14);
+
+        button1.setOnClickListener(this);
+        button2.setOnClickListener(this);
+        button3.setOnClickListener(this);
+        button4.setOnClickListener(this);
+        button5.setOnClickListener(this);
+        button6.setOnClickListener(this);
+        button7.setOnClickListener(this);
+        button8.setOnClickListener(this);
+        button9.setOnClickListener(this);
+        button10.setOnClickListener(this);
+        button11.setOnClickListener(this);
+        button12.setOnClickListener(this);
+        button13.setOnClickListener(this);
+        button14.setOnClickListener(this);
 
         list=(GridView)findViewById(R.id.list);
         adapter=new CustomListAdapter(this, bodyParts);
@@ -135,6 +179,91 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
 
+            case R.id.button_1 :{
+                Intent intent = new Intent(v.getContext(), ShowBodySubpart.class);
+                intent.putExtra("bodyPart","p1");
+                startActivityForResult(intent,1);}
+                break;
+
+            case R.id.button_2 :
+                Intent intent2 = new Intent(v.getContext(), ShowBodySubpart.class);
+                intent2.putExtra("bodyPart","p29");
+                startActivityForResult(intent2,1);
+                break;
+
+            case R.id.button_3 :
+                Intent intent3 = new Intent(v.getContext(), ShowBodySubpart.class);
+                intent3.putExtra("bodyPart","p36");
+                startActivityForResult(intent3,1);
+                break;
+
+            case R.id.button_4 :
+                Intent intent4 = new Intent(v.getContext(), ShowBodySubpart.class);
+                intent4.putExtra("bodyPart","p43");
+                startActivityForResult(intent4,1);
+                break;
+
+
+            case R.id.button_5 :
+                Intent intent5 = new Intent(v.getContext(), ShowBodySubpart.class);
+                intent5.putExtra("bodyPart","p48");
+                startActivityForResult(intent5,1);
+                break;
+
+            case R.id.button_6 :
+                Intent intent6 = new Intent(v.getContext(), ShowBodySubpart.class);
+                intent6.putExtra("bodyPart","p53");
+                startActivityForResult(intent6,1);
+                break;
+
+            case R.id.button_7 :
+                Intent intent7 = new Intent(v.getContext(), ShowBodySubpart.class);
+                intent7.putExtra("bodyPart","p53");
+                startActivityForResult(intent7,1);
+                break;
+
+            case R.id.button_8 :
+                Intent intent8 = new Intent(v.getContext(), ShowBodySubpart.class);
+                intent8.putExtra("bodyPart","p53");
+                startActivityForResult(intent8,1);
+                break;
+
+            case R.id.button_9 :
+                Intent intent9 = new Intent(v.getContext(), ShowBodySubpart.class);
+                intent9.putExtra("bodyPart","p53");
+                startActivityForResult(intent9,1);
+                break;
+
+            case R.id.button_10 :
+                Intent intent10 = new Intent(v.getContext(), ShowBodySubpart.class);
+                intent10.putExtra("bodyPart","p1");
+                startActivityForResult(intent10,1);
+                break;
+
+            case R.id.button_11 :
+                Intent intent11 = new Intent(v.getContext(), ShowBodySubpart.class);
+                intent11.putExtra("bodyPart","p33");
+                startActivityForResult(intent11,1);
+                break;
+
+            case R.id.button_12 :
+                Intent intent12 = new Intent(v.getContext(), ShowBodySubpart.class);
+                intent12.putExtra("bodyPart","p33");
+                startActivityForResult(intent12,1);
+                break;
+
+
+            case R.id.button_13 :
+                Intent intent13 = new Intent(v.getContext(), ShowBodySubpart.class);
+                intent13.putExtra("bodyPart","p43");
+                startActivityForResult(intent13,1);
+                break;
+
+            case R.id.button_14 :
+                Intent intent14 = new Intent(v.getContext(), ShowBodySubpart.class);
+                intent14.putExtra("bodyPart","p48");
+                startActivityForResult(intent14,1);
+                break;
 
             default:
 

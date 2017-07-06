@@ -47,8 +47,8 @@ public class ShowConfirmation extends AppCompatActivity implements View.OnClickL
         int year = c.get(Calendar.YEAR);
         int month = c.get(Calendar.MONTH) + 1;
         int day= c.get(Calendar.DAY_OF_MONTH);
-        TextView textDate = (TextView) findViewById(R.id.textDate);
-        textDate.setText(day +" / "+ month + " / " + year);
+        //TextView textDate = (TextView) findViewById(R.id.textDate);
+        //textDate.setText(day +" / "+ month + " / " + year);
 
         list=(GridView)findViewById(R.id.list);
         adapter=new AdapterConfirmation(this, symptoms);

@@ -9,6 +9,7 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 
 /**
@@ -60,8 +61,11 @@ public class ExpendableListAdapter extends BaseExpandableListAdapter {
         TextView txtListChild_date = (TextView) convertView
                 .findViewById(R.id.lblListItem_date);
 
+        Calendar c = Calendar.getInstance();
+
+        int day= c.get(Calendar.DAY_OF_MONTH);
         txtListChild.setText(childText);
-        txtListChild_date.setText(picto.getDay()+"/"+ picto.getMonth()+"/" +picto.getYear());
+        txtListChild_date.setText( "Since  " + Integer.toString(day - picto.getDay()) + "  days");
         return convertView;
     }
 
